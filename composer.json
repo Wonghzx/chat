@@ -1,0 +1,10 @@
+{
+  "name": "chat/chat",
+  "description": "chat",
+  "type": "project",
+  "keywords": [
+    "php",
+    "swoole"
+  ],
+  "require": {}
+}

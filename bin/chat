@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+defined('PHAR') or define('PHAR', boolval(\Phar::running(false)));
+defined('ROOT') or define('ROOT', realpath(getcwd()));
+defined('CHAT_ROOT') or define('CHAT_ROOT', PHAR ? \Phar::running() : realpath(getcwd()));
+$file = CHAT_ROOT . '/vendor/autoload.php';
+
+if (file_exists($file)) {
+    require $file;
+} else {
+    die("include composer autoload.php fail\n");
+}
