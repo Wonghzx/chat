@@ -6,5 +6,10 @@
     "php",
     "swoole"
   ],
-  "require": {}
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Chat\\": "src/"
+    }
+  }
 }

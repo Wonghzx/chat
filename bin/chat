@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use Chat\Console\Console;
+
 defined('PHAR') or define('PHAR', boolval(\Phar::running(false)));
 defined('ROOT') or define('ROOT', realpath(getcwd()));
 defined('CHAT_ROOT') or define('CHAT_ROOT', PHAR ? \Phar::running() : realpath(getcwd()));
@@ -11,3 +13,7 @@ if (file_exists($file)) {
 } else {
     die("include composer autoload.php fail\n");
 }
+
+$args = $argv;
+array_shift($args);
+Console::getInstance()->run();
